@@ -6,6 +6,10 @@ A responsive, static portfolio for a Network and System Administrator, ready to 
 
 The portfolio opens in its green-and-black dark theme. Visitors can use the **Light** button in the header to switch themes; their choice is saved in the browser.
 
+## Certificates
+
+The **Certificates & training** section lists the credentials and courses in the résumé. To show certificate scans, add the image or PDF files to the project and link them from the corresponding cards in `index.html`. Only publish certificate files after checking that they do not expose personal information you want to keep private.
+
 ## Keep it up to date
 
 1. Review the experience dates, project descriptions, skills, and contact details in `index.html` before publishing.
