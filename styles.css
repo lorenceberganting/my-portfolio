@@ -95,7 +95,7 @@ a { color: inherit; text-decoration: none; }
 .wordmark { font-size: 20px; font-weight: 700; letter-spacing: -1.5px; }
 .wordmark span, .accent { color: var(--green); }
 .site-header nav { display: flex; gap: 36px; margin-left: 75px; }
-.site-header nav a, .header-contact, .theme-toggle { font-size: 12px; font-weight: 600; }
+.site-header nav a, .header-contact, .theme-toggle { font-size: 15px; font-weight: 600; }
 .site-header nav a { color: var(--muted); transition: color .2s; }
 .site-header nav a:hover, .text-link:hover { color: var(--green); }
 .header-contact { border-bottom: 1px solid var(--green); padding-bottom: 5px; }
@@ -164,7 +164,32 @@ h1, h2, h3, p { margin-top: 0; }
 .button-primary { background: var(--green); color: var(--green-contrast); }
 .button-primary:hover { background: var(--green-hover); }
 .text-link { font-size: 11px; font-weight: 600; transition: color .2s; }
-.hero-aside { height: 400px; width: 100%; position: relative; display: grid; place-items: center; }
+.hero-aside {
+  height: 400px;
+  width: 100%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+.hero-aside::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(92%, 380px);
+  aspect-ratio: 1;
+  border: 1px solid var(--orbit-line);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--about-bg) 0%, var(--paper) 68%);
+}
+.hero-artwork {
+  display: block;
+  width: min(100%, 390px);
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, .34));
+}
 .orbit { position: absolute; border: 1px solid var(--orbit-line); border-radius: 50%; }
 .orbit-one { width: 300px; height: 300px; }
 .orbit-two { width: 224px; height: 224px; }
@@ -182,10 +207,10 @@ h1, h2, h3, p { margin-top: 0; }
   letter-spacing: -1px;
   transform: rotate(-10deg);
 }
-.orbit-caption { position: absolute; font: 9px var(--font-mono); letter-spacing: .12em; color: var(--muted); }
+.orbit-caption { position: absolute; z-index: 1; font: 9px var(--font-mono); letter-spacing: .12em; color: var(--muted); }
 .caption-top { top: 44px; right: 32px; transform: rotate(12deg); }
 .caption-bottom { bottom: 44px; left: 30px; transform: rotate(-12deg); }
-.orbit-cross { position: absolute; color: var(--green); font-size: 20px; }
+.orbit-cross { position: absolute; z-index: 1; color: var(--green); font-size: 20px; }
 .cross-one { top: 87px; left: 60px; }
 .cross-two { bottom: 72px; right: 57px; }
 .hero-meta {
@@ -203,7 +228,10 @@ h1, h2, h3, p { margin-top: 0; }
 }
 .work-section { padding-top: 100px; padding-bottom: 115px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 36px; }
-.section-heading .eyebrow, .about-heading .eyebrow, .contact-section .eyebrow { margin-bottom: 14px; }
+.section-heading .eyebrow, .about-heading .eyebrow, .contact-section .eyebrow {
+  margin-bottom: 14px;
+  font-size: 15px;
+}
 .section-heading h2, .about-heading h2, .contact-section h2 {
   margin-bottom: 0;
   font-size: clamp(34px, 4.2vw, 53px);
@@ -211,7 +239,7 @@ h1, h2, h3, p { margin-top: 0; }
   line-height: 1.05;
   letter-spacing: -.065em;
 }
-.section-note { max-width: 240px; margin-bottom: 4px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.section-note { max-width: 240px; margin-bottom: 4px; color: var(--muted); font-size: 15px; line-height: 1.7; }
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 22px; }
 .project-featured { grid-column: 1 / -1; }
 .project-art {
@@ -304,7 +332,7 @@ h1, h2, h3, p { margin-top: 0; }
 .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
 .about-heading h2 { font-size: clamp(34px, 4vw, 48px); }
 .about-copy { max-width: 490px; }
-.about-copy p { color: var(--muted); font-size: 12px; line-height: 1.9; }
+.about-copy p { color: var(--muted); font-size: 15px; line-height: 1.9; }
 .about-copy .about-lead { color: var(--ink); font-size: 18px; line-height: 1.55; letter-spacing: -.03em; }
 .skills { margin-top: 32px; }
 .skills h3 { margin-bottom: 14px; font: 9px var(--font-mono); letter-spacing: .09em; text-transform: uppercase; }
@@ -314,9 +342,9 @@ h1, h2, h3, p { margin-top: 0; }
 .experience-section .section-heading { margin-bottom: 42px; }
 .timeline { border-top: 1px solid var(--line); }
 .timeline-item { display: grid; grid-template-columns: 1fr 2fr .5fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
-.timeline-date, .timeline-type { padding-top: 4px; color: var(--muted); font: 9px var(--font-mono); }
-.timeline-item h3 { margin-bottom: 5px; font-size: 14px; font-weight: 600; }
-.timeline-item p { margin-bottom: 0; color: var(--muted); font-size: 10px; }
+.timeline-date, .timeline-type { padding-top: 4px; color: var(--muted); font: 11px var(--font-mono); }
+.timeline-item h3 { margin-bottom: 5px; font-size: 16px; font-weight: 600; }
+.timeline-item p { margin-bottom: 0; color: var(--muted); font-size: 15px; }
 .timeline-item .timeline-summary { max-width: 470px; margin-top: 12px; line-height: 1.7; }
 .timeline-type { justify-self: end; }
 .certificates-section { padding-top: 15px; padding-bottom: 105px; }
@@ -361,7 +389,7 @@ h1, h2, h3, p { margin-top: 0; }
   place-content: center;
   border: 1px solid currentColor;
   border-radius: 50%;
-  font: 12px/1.2 var(--font-mono);
+  font: 15px/1.2 var(--font-mono);
   text-align: center;
   transform: translate(-50%, -50%) rotate(-10deg);
 }
@@ -408,9 +436,7 @@ h1, h2, h3, p { margin-top: 0; }
   .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 80px; padding-bottom: 82px; }
   .hero h1 { font-size: clamp(49px, 11vw, 72px); }
   .hero-aside { height: 300px; margin-top: 30px; }
-  .orbit-one { width: 250px; height: 250px; }
-  .orbit-two { width: 190px; height: 190px; }
-  .orbit-three { width: 125px; height: 125px; }
+  .hero-artwork { width: min(100%, 300px); }
   .caption-top { top: 25px; right: 12%; }
   .caption-bottom { bottom: 25px; left: 12%; }
   .hero-meta { bottom: 20px; font-size: 8px; }
@@ -450,7 +476,7 @@ h1, h2, h3, p { margin-top: 0; }
   .certificate-featured { grid-column: auto; grid-template-columns: 1fr; }
   .certificate-featured .certificate-art { min-height: 175px; }
   .certificate-course { min-height: 0; }
-  .timeline-date { font-size: 8px; }
+  .timeline-date { font-size: 10px; }
   .site-footer p { font-size: 8px; }
 }
 
