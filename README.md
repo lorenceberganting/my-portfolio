@@ -14,7 +14,7 @@ The **Certificates & training** section lists the credentials and courses in the
 
 1. Review the experience dates, project descriptions, skills, and contact details in `index.html` before publishing.
 2. Add links or screenshots for completed project case studies when available.
-3. The résumé PDF is not included in the website, so its phone number and street-level address will not be published.
+3. Keep `Lorence_Berganting_Resume_SysAdmin.pdf` up to date; visitors can download it from the hero section.
 4. Keep `kingt.png` in the project folder; it is used as the hero artwork.
 5. Adjust colors and layout in `styles.css` if you want to customize the visual style.
 
