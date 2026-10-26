@@ -497,8 +497,12 @@ h1, h2, h3, p { margin-top: 0; }
 .contact-field input:focus-visible, .contact-field textarea:focus-visible { outline: 2px solid var(--contact-red); outline-offset: 2px; }
 .contact-submit { min-height: 46px; border: 0; border-radius: 26px; padding: 0 24px; background: var(--contact-red); color: #fff; font: 700 14px var(--font-sans); cursor: pointer; transition: background .2s, transform .2s; }
 .contact-submit:hover { background: var(--contact-red-hover); transform: translateY(-1px); }
+.contact-submit:disabled { cursor: wait; opacity: .7; transform: none; }
 .contact-submit:focus-visible, .contact-profile:focus-visible, .contact-email:focus-visible { outline: 2px solid var(--contact-red); outline-offset: 4px; }
 .contact-note { margin: 20px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+.contact-status { margin: 12px 0 0; color: var(--accent); font-size: 13px; line-height: 1.5; }
+.contact-status:empty { display: none; }
+.contact-status-error { color: var(--contact-red); }
 .contact-details { padding-top: 2px; }
 .contact-detail-group { margin-bottom: 34px; }
 .contact-detail-group h3 { margin-bottom: 17px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }

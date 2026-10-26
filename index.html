@@ -293,21 +293,23 @@
         <h2 id="contact-title">Contact</h2>
         <p class="contact-intro">Seeking Network and System Administrator roles, with 3+ years of experience in IT infrastructure and user support.</p>
         <div class="contact-layout">
-          <form class="contact-form">
+          <form class="contact-form" action="https://formspree.io/f/xyeeeekp" method="POST">
+            <input type="hidden" name="_subject" value="Portfolio contact form message" />
             <div class="contact-field">
               <label for="contact-name">Name</label>
-              <input id="contact-name" name="Name" type="text" placeholder="Your name" autocomplete="name" required />
+              <input id="contact-name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
             </div>
             <div class="contact-field">
               <label for="contact-email">Email</label>
-              <input id="contact-email" name="Email" type="email" placeholder="you@example.com" autocomplete="email" required />
+              <input id="contact-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
             </div>
             <div class="contact-field">
               <label for="contact-message">Message</label>
-              <textarea id="contact-message" name="Message" placeholder="Tell me about the role or project..." required></textarea>
+              <textarea id="contact-message" name="message" placeholder="Tell me about the role or project..." required></textarea>
             </div>
             <button class="contact-submit" type="submit">Send message</button>
             <p class="contact-note">I will receive the message and reply to you as soon as possible.</p>
+            <p class="contact-status" role="status" aria-live="polite"></p>
           </form>
           <aside class="contact-details" aria-label="Contact details">
             <div class="contact-detail-group">

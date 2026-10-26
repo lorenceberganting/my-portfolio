@@ -1,18 +1,36 @@
 const contactForm = document.querySelector(".contact-form");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const statusMessage = contactForm.querySelector(".contact-status");
+
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(contactForm);
-    const name = formData.get("Name").trim();
-    const email = formData.get("Email").trim();
-    const message = formData.get("Message").trim();
-    const subject = encodeURIComponent(`Portfolio message from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    );
+    statusMessage.textContent = "Sending your message...";
+    statusMessage.classList.remove("contact-status-error");
+    submitButton.disabled = true;
 
-    window.location.href = `mailto:lorenceberganting@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
+
+      contactForm.reset();
+      statusMessage.textContent = "Thanks! Your message has been sent.";
+    } catch (error) {
+      console.error("Unable to send contact form:", error);
+      statusMessage.textContent =
+        "Sorry, your message could not be sent. Please email lorenceberganting@gmail.com directly.";
+      statusMessage.classList.add("contact-status-error");
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 }

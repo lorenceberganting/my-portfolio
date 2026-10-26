@@ -6,7 +6,7 @@ A responsive, static portfolio for a Network and System Administrator, ready to 
 
 The portfolio opens in its black-and-red dark theme, with an interactive network background fixed across the page that respects reduced-motion preferences. Visitors can use the **Light** button in the header to switch to the light red-accented theme; their choice is saved in the browser.
 
-The contact form opens a prefilled email draft in the visitor's mail app; visitors send the message from there.
+The contact form sends submissions through Formspree to the configured inbox. The Formspree form must be active and the receiving email address verified in Formspree.
 
 ## Certificates
 
