@@ -10,7 +10,7 @@ function setTheme(theme) {
     isDark ? "Switch to light mode" : "Switch to dark mode",
   );
   themeToggle.textContent = isDark ? "☼ Light" : "☾ Dark";
-  themeColor.setAttribute("content", isDark ? "#080d09" : "#f5f4ef");
+  themeColor.setAttribute("content", isDark ? "#09090b" : "#f7f4f4");
 }
 
 setTheme(document.documentElement.dataset.theme || "dark");

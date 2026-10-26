@@ -4,7 +4,7 @@ A responsive, static portfolio for a Network and System Administrator, ready to 
 
 ## Theme
 
-The portfolio opens in its green-and-black dark theme. Visitors can use the **Light** button in the header to switch themes; their choice is saved in the browser.
+The portfolio opens in its black-and-red dark theme. Visitors can use the **Light** button in the header to switch to the light red-accented theme; their choice is saved in the browser.
 
 ## Certificates
 
